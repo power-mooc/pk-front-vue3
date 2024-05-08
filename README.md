@@ -48,6 +48,15 @@ pnpm test:e2e
 pnpm lint
 ```
 
-# 一、项目升级策略
+# 项目笔记
+
+## 一、项目方案
+
+### 1、依赖升级策略
 
 npm-check:https://github.com/dylang/npm-check
+
+### 2、css重置方案
+
+- reset-css （选用此方案）
+- nomalization
