@@ -47,3 +47,7 @@ pnpm test:e2e
 ```sh
 pnpm lint
 ```
+
+# 一、项目升级策略
+
+npm-check:https://github.com/dylang/npm-check
