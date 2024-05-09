@@ -5,7 +5,7 @@
   <header>
 
     <div class="wrapper">
-
+      <div class="hao"></div>
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
@@ -16,6 +16,11 @@
   <RouterView />
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+.wrapper{
+  .hao{
+    background: red;
+  }
+}
 
 </style>
