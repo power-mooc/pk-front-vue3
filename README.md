@@ -60,3 +60,13 @@ npm-check:https://github.com/dylang/npm-check
 
 - reset-css （选用此方案）
 - nomalization
+
+### 3、自动化路由
+
+- vite-plugin-pages
+- unplugin-vue-router(下一代自动路由) （选用此方案）
+
+# 4、原子化css
+
+taiwindcss
+unocss (采用preset为taiwind的unocss方案)

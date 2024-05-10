@@ -7,7 +7,7 @@
     <div class="wrapper">
       <div class="hao"></div>
       <nav>
-        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/home">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>
