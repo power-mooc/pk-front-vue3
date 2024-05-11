@@ -70,3 +70,9 @@ npm-check:https://github.com/dylang/npm-check
 
 tailwindcss
 unocss (采用preset为taiwind的unocss方案)
+
+# 5、自动导入：导入api
+
+unplugin-auto-import
+
+# 6、

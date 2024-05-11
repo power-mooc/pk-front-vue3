@@ -6,9 +6,27 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 import VueDevTools from 'vite-plugin-vue-devtools';
 import VueRouter from 'unplugin-vue-router/vite'; // 自动化路由
 import UnoCSS from 'unocss/vite'; // unocss
+import AutoImport from 'unplugin-auto-import/vite'; //自动导入
+import { VueRouterAutoImports } from 'unplugin-vue-router'; //自动导入路由
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [VueRouter({}), vue(), vueJsx(), VueDevTools(), UnoCSS()],
+  plugins: [
+    VueRouter({}),
+    vue(),
+    vueJsx(),
+    VueDevTools(),
+    UnoCSS(),
+    AutoImport({
+      include: [
+        /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+        /\.vue$/,
+        /\.vue\?vue/, // .vue
+        /\.md$/ // .md
+      ],
+      imports: ['vue', VueRouterAutoImports],
+      dts: './auto-imports.d.ts'
+    })
+  ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
