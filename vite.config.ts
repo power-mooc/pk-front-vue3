@@ -23,7 +23,7 @@ export default defineConfig({
         /\.vue\?vue/, // .vue
         /\.md$/ // .md
       ],
-      imports: ['vue', VueRouterAutoImports],
+      imports: ['vue', '@vueuse/core', VueRouterAutoImports],
       dts: './auto-imports.d.ts'
     })
   ],
