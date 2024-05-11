@@ -68,5 +68,5 @@ npm-check:https://github.com/dylang/npm-check
 
 # 4、原子化css
 
-taiwindcss
+tailwindcss
 unocss (采用preset为taiwind的unocss方案)

@@ -6,7 +6,9 @@ import { createPinia } from 'pinia';
 import App from './App.vue';
 import router from './router';
 // 重置css
-import 'reset-css';
+import '@unocss/reset/tailwind.css';
+// unocss
+import 'virtual:uno.css';
 const app = createApp(App);
 
 app.use(createPinia());
