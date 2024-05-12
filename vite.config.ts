@@ -9,6 +9,10 @@ import UnoCSS from 'unocss/vite'; // unocss
 import AutoImport from 'unplugin-auto-import/vite'; //自动导入api
 import { VueRouterAutoImports } from 'unplugin-vue-router'; //自动导入路由
 import Components from 'unplugin-vue-components/vite'; //自动导入组件
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'; // element plus 自动导入
+
+import Icons from 'unplugin-icons/vite'; // iconfont图标
+import IconsResolver from 'unplugin-icons/resolver'; // iconfont
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -17,7 +21,6 @@ export default defineConfig({
     vueJsx(),
     VueDevTools(),
     UnoCSS(),
-    Components({}),
     AutoImport({
       include: [
         /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
@@ -26,9 +29,28 @@ export default defineConfig({
         /\.md$/ // .md
       ],
       imports: ['vue', '@vueuse/core', VueRouterAutoImports],
-      dts: './auto-imports.d.ts'
+      resolvers: [
+        ElementPlusResolver(),
+        // 自动导入图标组件
+        IconsResolver({
+          prefix: 'Icon'
+        })
+      ]
+    }),
+    Components({
+      resolvers: [
+        ElementPlusResolver(),
+        // 自动注册图标组件
+        IconsResolver({
+          enabledCollections: ['ep']
+        })
+      ]
+    }),
+    Icons({
+      autoInstall: true
     })
   ],
+
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
