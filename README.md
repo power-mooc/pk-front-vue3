@@ -87,3 +87,7 @@ vueuse
 
 element plus
 unocss icon preset
+
+# 布局
+
+vite-plugin-vue-layouts

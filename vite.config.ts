@@ -13,6 +13,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'; // elem
 
 import Icons from 'unplugin-icons/vite'; // iconfont图标
 import IconsResolver from 'unplugin-icons/resolver'; // iconfont
+import Layouts from 'vite-plugin-vue-layouts'; // layous布局
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -48,6 +49,11 @@ export default defineConfig({
     }),
     Icons({
       autoInstall: true
+    }),
+    Layouts({
+      layoutsDirs: 'src/layouts',
+      pagesDirs: 'src/pages',
+      defaultLayout: 'default'
     })
   ],
 

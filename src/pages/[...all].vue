@@ -4,6 +4,8 @@
   </div>
 </template>
 
-<style>
-
-</style>
+<style></style>
+<route lang="yaml">
+meta:
+  layout: nofound
+</route>

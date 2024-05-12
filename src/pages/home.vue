@@ -43,3 +43,7 @@
 const str = ref('11');
 const { x, y } = useMouse();
 </script>
+<route lang="yaml">
+meta:
+  layout: default
+</route>
