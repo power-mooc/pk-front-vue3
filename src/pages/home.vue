@@ -4,6 +4,7 @@
     Hello world!
   </h1>
    <div>pos: {{ x }}, {{ y }}</div>
+   <IconCommunity/>
 </template>
 <script setup lang="ts">
 const str = ref('11')

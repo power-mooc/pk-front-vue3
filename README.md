@@ -66,13 +66,19 @@ npm-check:https://github.com/dylang/npm-check
 - vite-plugin-pages
 - unplugin-vue-router(下一代自动路由) （选用此方案）
 
-# 4、原子化css
+### 4、原子化css
 
 tailwindcss
 unocss (采用preset为taiwind的unocss方案)
 
-# 5、自动导入：导入api
+### 5、自动导入：导入api
 
 unplugin-auto-import
 
-# 6、
+### 6、自动导入：导入componens
+
+unplugin-vue-components
+
+### 8、工具类
+
+vueuse
