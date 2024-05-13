@@ -88,6 +88,10 @@ vueuse
 element plus
 unocss icon preset
 
-# 布局
+# 10 布局
 
 vite-plugin-vue-layouts
+
+### 11、模拟数据
+
+vite-plugin-mock
