@@ -7,6 +7,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    Container: typeof import('./src/components/Container.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElIcon: typeof import('element-plus/es')['ElIcon']
     IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
@@ -18,6 +19,7 @@ declare module 'vue' {
     IEpAim: typeof import('~icons/ep/aim')['default']
     IEpCircleCheckFilled: typeof import('~icons/ep/circle-check-filled')['default']
     IEpCircumAirportSign1: typeof import('~icons/ep/circum-airport-sign1')['default']
+    Menu: typeof import('./src/components/Menu.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

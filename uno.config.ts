@@ -1,4 +1,4 @@
-import { defineConfig, presetIcons } from 'unocss';
+import { defineConfig, presetIcons, transformerDirectives } from 'unocss';
 import presetWind from '@unocss/preset-wind';
 export default defineConfig({
   presets: [
@@ -9,5 +9,6 @@ export default defineConfig({
         display: 'inline-block'
       }
     })
-  ]
+  ],
+  transformers: [transformerDirectives()] //使用@apply语法
 });

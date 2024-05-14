@@ -1,9 +1,7 @@
 <template>
-  <div class="flex">
-    <router-link to="/">产品</router-link>
-    <router-link to="/community">社区</router-link>
-    <router-link to="/study">学习</router-link>
-    <router-link to="/about">关于</router-link>
+  <div class="flex justify-start items-center bg-black bg-opacity-30">
+    <img src="/512x512.png" class="w-14 h-full lt-sm:mx-auto" alt="logo" />
+    <Menu></Menu>
   </div>
   <router-view />
   <div>footer</div>
