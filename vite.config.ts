@@ -13,7 +13,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'; // elem
 
 import Icons from 'unplugin-icons/vite'; // iconfont图标
 import IconsResolver from 'unplugin-icons/resolver'; // iconfont
-import Layouts from 'vite-plugin-vue-layouts'; // layous布局
+import MetaLayouts from 'vite-plugin-vue-meta-layouts'; // layous布局
 import { viteMockServe } from 'vite-plugin-mock'; //mock数据
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -52,10 +52,10 @@ export default defineConfig(({ mode }) => {
       Icons({
         autoInstall: true
       }),
-      Layouts({
-        layoutsDirs: 'src/layouts',
-        pagesDirs: 'src/pages',
-        defaultLayout: 'default'
+      MetaLayouts({
+        target: 'src/layouts',
+        defaultLayout: 'default',
+        skipTopLevelRouteLayout: true
       }),
       viteMockServe({
         mockPath: 'mock',
