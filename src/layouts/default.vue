@@ -1,14 +1,13 @@
 <template>
-  <div class="fixed top-0 w-full" :class="{ 'bg-black bg-opacity-30': y > 0 }">
+  <div class="fixed top-0 w-full z-2" :class="{ 'bg-black bg-opacity-30': y > 0 }">
     <Container>
       <img src="/512x512.png" class="w-14 h-full lt-sm:mx-auto" alt="logo" />
       <Menu></Menu>
     </Container>
   </div>
-  22
   <router-view></router-view>
   <div class="h-[4000px]"></div>
-  <div>footer1144</div>
+  <div>footer</div>
 </template>
 <script setup lang="ts">
 const { y } = useWindowScroll();
