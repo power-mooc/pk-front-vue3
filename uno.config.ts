@@ -1,4 +1,4 @@
-import { defineConfig, presetIcons, transformerDirectives } from 'unocss';
+import { defineConfig, presetIcons, transformerDirectives, transformerVariantGroup } from 'unocss';
 import presetWind from '@unocss/preset-wind';
 export default defineConfig({
   shortcuts: {
@@ -13,5 +13,5 @@ export default defineConfig({
       }
     })
   ],
-  transformers: [transformerDirectives()] //使用@apply语法
+  transformers: [transformerDirectives(), transformerVariantGroup()] //使用@apply语法 & Variant group transformer
 });
