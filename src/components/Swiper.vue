@@ -41,7 +41,6 @@
 </template>
 <script setup lang="ts">
 import { Navigation, Pagination, A11y } from 'swiper/modules';
-
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import type { Swiper as SwiperType } from 'swiper';
 import 'swiper/scss';
@@ -75,7 +74,7 @@ const onSlideChange = () => {
   console.log('slide change');
 };
 </script>
-<style lang="scss">
+<style scoped lang="scss">
 .swiper-button-disabled {
   @apply c-black opacity-30;
 }
