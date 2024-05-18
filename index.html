@@ -1,13 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
+    <script>
+      // 根据userAgent跳转
+      // if (/iPhone| Android | Window Phones/i.test(navigator.userAgent)) {
+      //   window.location.href = 'https://m.imooc.com';
+      // }
+
+      // rem
+      // const setFontSize = () => {
+      //   document.documentElement.style.fontSize = (document.documentElement.clientWidth / 1920) * 16 + 'px';
+      // };
+
+      // window.addEventListener('DOMContentLoaded', () => {
+      //   console.log(11);
+      //   setFontSize();
+      //   window.onresize = () => {
+      //     setFontSize();
+      //   };
+      // });
+    </script>
   </body>
 </html>

@@ -95,3 +95,39 @@ vite-plugin-vue-layouts
 ### 11、模拟数据
 
 vite-plugin-mock
+
+# 二、响应式布局
+
+### 1、根据userAgent跳转移动端
+
+```js
+// if (/iPhone| Android | Window Phones/i.test(navigator.userAgent)) {
+//   window.location.href = 'https://m.imooc.com';
+// }
+```
+
+### 2、rem方案(缺点：字体在屏幕较小时会缩放非常小)
+
+```js
+const setFontSize = () => {
+  document.documentElement.style.fontSize = (document.documentElement.clientWidth / 1920) * 16 + 'px';
+};
+window.addEventListener('DOMContentLoaded', () => {
+  setFontSize();
+  window.onresize = () => {
+    setFontSize();
+  };
+});
+```
+
+### 3、媒体查询
+
+```js
+@media screen and (max-width) {
+
+}
+```
+
+### 4、vw方案
+
+使用插件postcss-px-to-viewport-8-plugin

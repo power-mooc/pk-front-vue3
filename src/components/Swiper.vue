@@ -10,8 +10,6 @@
       prevEl: '.prev'
     }"
     :pagination="{ type: 'fraction', el: '.pagination' }"
-    @swiper="onSwiper"
-    @slideChange="onSlideChange"
   >
     <swiper-slide v-for="item in items" :key="item.image">
       <slot :item="item">
@@ -22,9 +20,9 @@
           }"
         >
           <Container class="h-full">
-            <div class="flex flex-col justify-center align-start">
-              <p class="text-4xl font-bold text-white pb-4">{{ item.title }}</p>
-              <p class="text-xl text-gray-100 text-white">{{ item.subTitle }}</p>
+            <div class="flex flex-col justify-center align-start lt-sm:p-4">
+              <p class="text-xl sm:text-4xl font-bold text-white pb-4">{{ item.title }}</p>
+              <p class="text-sm sm:text-xl text-gray-100 text-white">{{ item.subTitle }}</p>
             </div>
           </Container>
         </div>
@@ -42,11 +40,11 @@
 <script setup lang="ts">
 import { Navigation, Pagination, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import type { Swiper as SwiperType } from 'swiper';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import type { SwiperItemType } from './types';
+
 const modules = [Navigation, Pagination, A11y];
 const props = defineProps({
   height: {
@@ -66,12 +64,6 @@ const getClassAndStyle = (str: string) => {
     style: /(rem|em|px)/.test(props.height) ? { height: str } : {},
     class: /h-/.test(props.height) ? str : ''
   };
-};
-const onSwiper = (swiper: SwiperType) => {
-  console.log();
-};
-const onSlideChange = () => {
-  console.log('slide change');
 };
 </script>
 <style scoped lang="scss">

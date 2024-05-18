@@ -18,6 +18,9 @@ import { viteMockServe } from 'vite-plugin-mock'; //mock数据
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   return {
+    server: {
+      host: '0.0.0.0'
+    },
     plugins: [
       VueRouter({}),
       vue(),
@@ -31,7 +34,7 @@ export default defineConfig(({ mode }) => {
           /\.vue\?vue/, // .vue
           /\.md$/ // .md
         ],
-        imports: ['vue', '@vueuse/core', VueRouterAutoImports],
+        imports: ['vue', '@vueuse/core', 'pinia', VueRouterAutoImports],
         resolvers: [
           ElementPlusResolver(),
           // 自动导入图标组件
