@@ -13,5 +13,10 @@ export default defineConfig({
       }
     })
   ],
-  transformers: [transformerDirectives(), transformerVariantGroup()] //使用@apply语法 & Variant group transformer
+  transformers: [transformerDirectives(), transformerVariantGroup()], //使用@apply语法 & Variant group transformer
+  theme: {
+    colors: {
+      main: '#4E98F4'
+    }
+  }
 });

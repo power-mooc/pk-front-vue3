@@ -10,10 +10,10 @@
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
     <script>
-      // 根据userAgent跳转
-      // if (/iPhone| Android | Window Phones/i.test(navigator.userAgent)) {
-      //   window.location.href = 'https://m.imooc.com';
-      // }
+      // 根据userAgent跳转mobile 或 pc;
+      if (/iPhone| Android | Window Phones/i.test(navigator.userAgent)) {
+        document.body.classList.add('mobile-device');
+      }
 
       // rem
       // const setFontSize = () => {

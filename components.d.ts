@@ -9,6 +9,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     Card: typeof import('./src/components/Card.vue')['default']
     Container: typeof import('./src/components/Container.vue')['default']
+    DefaultFooter: typeof import('./src/components/DefaultFooter.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElIcon: typeof import('element-plus/es')['ElIcon']
     IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
@@ -21,6 +22,7 @@ declare module 'vue' {
     IEpCircleCheckFilled: typeof import('~icons/ep/circle-check-filled')['default']
     IEpCircumAirportSign1: typeof import('~icons/ep/circum-airport-sign1')['default']
     Menu: typeof import('./src/components/Menu.vue')['default']
+    MobileNavbar: typeof import('./src/components/MobileNavbar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Swiper: typeof import('./src/components/Swiper.vue')['default']
