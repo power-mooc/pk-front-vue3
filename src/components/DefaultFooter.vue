@@ -15,7 +15,7 @@
             <div class="i-ic:baseline-wechat cursor-pointer"></div>
             <img
               :src="contacts.wechat || wechat"
-              class="hidden absolute top-0 left-1/2 translate-x-[-50%] translate-y-[-100%] w-20 h-20 rounded group-hover:display-block max-w-unset"
+              class="hidden absolute top-0 left-1/2 translate-x-[-50%] translate-y-[-100%] w-20 h-20 rounded group-hover:block max-w-unset"
               alt=""
             />
           </div>
@@ -23,7 +23,7 @@
             <div class="ml-4 i-bi:sina-weibo cursor-pointer"></div>
             <img
               :src="contacts.sina || sina"
-              class="hidden absolute top-0 left-1/2 translate-x-[-50%] translate-y-[-100%] w-20 h-20 rounded group-hover:display-block max-w-unset"
+              class="hidden absolute top-0 left-1/2 translate-x-[-50%] translate-y-[-100%] w-20 h-20 rounded group-hover:block max-w-unset"
               alt=""
             />
           </div>
@@ -93,7 +93,7 @@ interface FootItem {
 
 withDefaults(defineProps<FootItem>(), {
   icp: '',
-  copyRight: 'toimc',
+  copyRight: 'power',
   links: () => [
     {
       url: 'https://www.power17.xyz/',
@@ -105,7 +105,8 @@ withDefaults(defineProps<FootItem>(), {
     }
   ],
   contacts: () => ({
-    email: 'admin@wayearn.com'
+    email: 'admin@wayearn.com',
+    phone: '137XXXXXXX'
   })
 });
 // {
@@ -116,7 +117,7 @@ withDefaults(defineProps<FootItem>(), {
 // }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 i {
   background-image: url('@/assets/icons/beianicon.png');
 }
