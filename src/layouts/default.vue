@@ -14,11 +14,11 @@
           <div class="i-radix-icons:cross-2" v-else></div>
         </Transition>
       </div>
+      <!-- 菜单 -->
       <Menu v-show="show || ltWidth" class="lt-sm:(absolute top-14 right-0 w-full flex-col)"></Menu>
     </Container>
   </div>
   <router-view></router-view>
-  <div class="h-[400px]"></div>
   <div>
     <div class="mobile-hide">
       <DefaultFooter icp="鄂ICP备XXXXX号-1"></DefaultFooter>
