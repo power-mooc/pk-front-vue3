@@ -45,6 +45,7 @@
         </a>
       </div>
     </Container>
+    <!-- 官方课程 -->
     <Container class="mt-5">
       <div class="py-4">
         <div class="text-2xl font-bold pb-4">官方课程</div>
@@ -74,30 +75,92 @@
         </a>
       </div>
     </Container>
+    <!-- 课程项目展示 -->
+    <Container class="mt-5">
+      <div class="py-4">
+        <div class="text-2xl font-bold pb-4">课程项目展示</div>
+        <div class="flex justify-between items-center">
+          <div class="text-sm text-gray-400">项目及架构展示，核心主流技术</div>
+        </div>
+      </div>
+    </Container>
+    <Container class="w-full text-gray-400">
+      <Swiper
+        :items="items"
+        :height="(width > 640 ? 28 : 40) * themeStore.rate + 'rem'"
+        class="w-full sm:w-2/3"
+        @change="handleSwiperChange"
+      ></Swiper>
+      <div class="lt-sm:display-none sm:(w-1/3) bg-coolgray-700 self-stretch flex flex-col justify-center px-4">
+        <a v-if="selectItem" :href="selectItem.url" target="_blank">
+          <div class="text-2xl font-bold pb-4 text-gray-100">{{ selectItem.title }}</div>
+          <div class="text-sm">{{ selectItem.subTitle }}</div>
+          <div class="flex items-center justify-between mb-4">查看更多</div>
+          <div class="i-mdi:arrow-right-thin text-4xl"></div>
+        </a>
+      </div>
+    </Container>
+    <!-- 合作伙伴 -->
+    <Container>
+      <div class="text-2xl font-bold mt-8">合作伙伴</div>
+    </Container>
+    <Container>
+      <Swiper
+        height="200px"
+        :space-between="50"
+        :pagination="{ clickable: true }"
+        :slides-per-view="4"
+        :items="partners"
+        class="w-full"
+        loop
+        :pagination_hide="true"
+      >
+        <template #default="{ item }">
+          <div class="px-2 lt-sm:h-20 sm:h-36 w-full bg-gray-100">
+            <div
+              class="w-full h-full bg-no-repeat bg-contain bg-center"
+              :style="{
+                backgroundImage: `url(${item.image})`
+              }"
+            ></div>
+          </div>
+        </template>
+      </Swiper>
+    </Container>
   </div>
 </template>
 <script lang="ts" setup>
 import bg from '@/assets/images/bg.png';
 import type { SwiperItemType } from '@/components/types';
 import { useThemeStore } from '@/stores/useThemeStore';
+import type { Swiper as SwiperType } from 'swiper';
 const themeStore = useThemeStore();
+const { width } = useWindowSize();
 const items: SwiperItemType[] = [
   {
     image: bg,
-    title: '传播技术的种子',
+    title: '传播技术的种子1',
     subTitle: '让技术没有门槛，让沟通没有障碍'
   },
   {
-    image: bg
+    image: bg,
+    title: '传播技术的种子2',
+    subTitle: '让技术没有门槛，让沟通没有障碍'
   },
   {
-    image: bg
+    image: bg,
+    title: '传播技术的种子3',
+    subTitle: '让技术没有门槛，让沟通没有障碍'
   },
   {
-    image: bg
+    image: bg,
+    title: '传播技术的种子4',
+    subTitle: '让技术没有门槛，让沟通没有障碍'
   },
   {
-    image: bg
+    image: bg,
+    title: '传播技术的种子5',
+    subTitle: '让技术没有门槛，让沟通没有障碍'
   }
 ];
 const projects = [
@@ -188,6 +251,24 @@ const courses = [
     image: bg
   }
 ];
+const partners = ref(
+  [
+    'https://wayearn.static.toimc.com/partner/logo1.png',
+    'https://wayearn.static.toimc.com/partner/logo2.png',
+    'https://wayearn.static.toimc.com/partner/logo8.png',
+    'https://wayearn.static.toimc.com/partner/logo5.png',
+    'https://wayearn.static.toimc.com/partner/logo6.png',
+    'https://wayearn.static.toimc.com/partner/logo7.png'
+  ].map((item) => {
+    return { image: item };
+  })
+);
+
+const selectItem = ref<SwiperItemType>(items[0]);
+const handleSwiperChange = (e: SwiperType) => {
+  const swiperIndex = e.activeIndex;
+  selectItem.value = items[swiperIndex];
+};
 </script>
 <style scoped lang="scss">
 :deep(.card) {

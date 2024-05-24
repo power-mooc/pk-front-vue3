@@ -11,7 +11,6 @@
       prevEl: '.prev'
     }"
     :pagination="{ type: 'fraction', el: '.pagination' }"
-    v-bind="$attrs"
   >
     <swiper-slide v-for="item in items" :key="item.image">
       <slot :item="item">
@@ -31,7 +30,6 @@
       </slot>
     </swiper-slide>
     <div
-      v-if="!$attrs.pagination_hide"
       class="flex justify-center items-center absolute right-0 bottom-0 bg-white opacity-60 text-dark-300 w-40 h-12 z-30"
     >
       <div class="pagination w-unset! font-bold mr-4"></div>
@@ -41,7 +39,7 @@
   </swiper>
 </template>
 <script setup lang="ts">
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
@@ -49,7 +47,7 @@ import 'swiper/scss/pagination';
 import type { SwiperItemType } from './types';
 import type { Swiper as SwiperType } from 'swiper';
 
-const modules = [Navigation, Pagination];
+const modules = [Navigation, Pagination, A11y];
 const props = defineProps({
   height: {
     type: String,
