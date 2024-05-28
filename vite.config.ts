@@ -15,6 +15,7 @@ import Icons from 'unplugin-icons/vite'; // iconfont图标
 import IconsResolver from 'unplugin-icons/resolver'; // iconfont
 import MetaLayouts from 'vite-plugin-vue-meta-layouts'; // layous布局
 import { viteMockServe } from 'vite-plugin-mock'; //mock数据
+import Markdown from 'unplugin-vue-markdown/vite'; // markdown
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   return {
@@ -22,8 +23,11 @@ export default defineConfig(({ mode }) => {
       host: '0.0.0.0'
     },
     plugins: [
-      VueRouter({}),
-      vue(),
+      VueRouter({
+        extensions: ['.vue', '.md']
+      }),
+      vue({ include: [/\.vue$/, /\.md$/] }),
+      Markdown({}),
       vueJsx(),
       VueDevTools(),
       UnoCSS(),
@@ -50,7 +54,8 @@ export default defineConfig(({ mode }) => {
           IconsResolver({
             enabledCollections: ['ep']
           })
-        ]
+        ],
+        include: [/\.vue$/, /\.md$/]
       }),
       Icons({
         autoInstall: true
