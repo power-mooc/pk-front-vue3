@@ -109,6 +109,7 @@
         height="200px"
         :space-between="50"
         :pagination="{ clickable: true }"
+        :navigation="undefined"
         :slides-per-view="4"
         :items="partners"
         class="w-full"
@@ -126,6 +127,26 @@
           </div>
         </template>
       </Swiper>
+    </Container>
+    <Container class="py-4">
+      <div class="w-2/3 h-[300px] sm:h-[400px]">
+        <div class="grid grid-cols-4 grid-rows-3 h-full gap-4 p-4">
+          <div class="border col-start-1 col-span-4 row-start-1 row-span-1">1</div>
+          <div class="border col-start-1 col-span-2 row-start-2 row-span-2">2</div>
+          <div class="border col-start-3 col-span-2 row-start-2 row-span-1">3</div>
+          <div class="border col-start-3 col-span-1 row-start-3 row-span-1">4</div>
+          <div class="border col-start-4 col-span-1 row-start-3 row-span-1">5</div>
+        </div>
+      </div>
+      <div class="w-1/3 self-stretch flex flex-col justify-center">
+        <div class="text-2xl font-bold pb-4">讲师团队</div>
+        <div class="text-sm text-gray-400">
+          <p>一线大厂、资深技术大牛10名</p>
+          <p>技术专家不定期坐镇直播间</p>
+          <p>前端、Java、Python工程师对应不同用户开发需求</p>
+          <p>年薪百万不是梦，加入我们!</p>
+        </div>
+      </div>
     </Container>
   </div>
 </template>
