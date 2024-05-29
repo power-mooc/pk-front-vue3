@@ -1,7 +1,7 @@
 <template>
   <div
-    class="fixed top-0 w-full z-99 transition-all duration-500 h-0"
-    :class="[{ 'bg-black bg-opacity-30 shadow-lg': y > 0 }, { 'lt-sm:(bg-black h-full)': show }]"
+    class="fixed top-0 w-full z-99 transition-all duration-500 h-auto"
+    :class="[{ ' bg-opacity-30 shadow-lg': y > 0 }, { 'lt-sm:(bg-black h-full)': show }]"
   >
     <Container>
       <img src="/512x512.png" class="w-14 h-full lt-sm:mx-auto" alt="logo" />

@@ -5,3 +5,9 @@ export interface SwiperItemType {
   desc?: string;
   url?: string;
 }
+
+export interface PartnerType {
+  name: string;
+  desc: string;
+  image?: string;
+}

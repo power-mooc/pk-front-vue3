@@ -16,6 +16,7 @@ import IconsResolver from 'unplugin-icons/resolver'; // iconfont
 import MetaLayouts from 'vite-plugin-vue-meta-layouts'; // layous布局
 import { viteMockServe } from 'vite-plugin-mock'; //mock数据
 import Markdown from 'unplugin-vue-markdown/vite'; // markdown
+import prism from 'markdown-it-prism'; // markdown语法高亮
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   return {
@@ -27,7 +28,10 @@ export default defineConfig(({ mode }) => {
         extensions: ['.vue', '.md']
       }),
       vue({ include: [/\.vue$/, /\.md$/] }),
-      Markdown({}),
+      Markdown({
+        headEnabled: true,
+        markdownItUses: [prism]
+      }),
       vueJsx(),
       VueDevTools(),
       UnoCSS(),
