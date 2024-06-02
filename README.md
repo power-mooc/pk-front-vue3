@@ -96,6 +96,12 @@ vite-plugin-vue-layouts
 
 vite-plugin-mock
 
+### 12、markdown支持
+
+unplugin-vue-markdown
+markdown-it-prism
+prism
+
 # 二、响应式布局
 
 ### 1、根据userAgent跳转移动端

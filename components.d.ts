@@ -12,6 +12,8 @@ declare module 'vue' {
     DefaultFooter: typeof import('./src/components/DefaultFooter.vue')['default']
     FreeSwiper: typeof import('./src/components/FreeSwiper.vue')['default']
     IconTooling: typeof import('./src/components/icons/IconTooling.vue')['default']
+    ImagesSwiper: typeof import('./src/components/ImagesSwiper.vue')['default']
+    ImageSwiper: typeof import('./src/components/ImageSwiper.vue')['default']
     Menu: typeof import('./src/components/Menu.vue')['default']
     MobileNavbar: typeof import('./src/components/MobileNavbar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
