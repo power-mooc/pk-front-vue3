@@ -24,7 +24,11 @@ declare module 'vue-router/auto-routes' {
     '/community': RouteRecordInfo<'/community', '/community', Record<never, never>, Record<never, never>>,
     '/project': RouteRecordInfo<'/project', '/project', Record<never, never>, Record<never, never>>,
     '/project/test': RouteRecordInfo<'/project/test', '/project/test', Record<never, never>, Record<never, never>>,
+    '/study': RouteRecordInfo<'/study', '/study', Record<never, never>, Record<never, never>>,
     '/study/': RouteRecordInfo<'/study/', '/study', Record<never, never>, Record<never, never>>,
     '/study/[id]': RouteRecordInfo<'/study/[id]', '/study/:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
+    '/study/[id]/': RouteRecordInfo<'/study/[id]/', '/study/:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
+    '/study/cart': RouteRecordInfo<'/study/cart', '/study/cart', Record<never, never>, Record<never, never>>,
+    '/study/test': RouteRecordInfo<'/study/test', '/study/test', Record<never, never>, Record<never, never>>,
   }
 }

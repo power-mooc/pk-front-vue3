@@ -67,7 +67,6 @@ import type { Swiper as SwiperType } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation, Pagination } from 'swiper/modules';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -97,12 +96,11 @@ const modules = [Navigation, Pagination];
 const emits = defineEmits(['change']);
 
 const onSwiper = (swiper: SwiperType) => {
-  // console.log(swiper)
   swiperRef.value = swiper;
 };
-const onSlideChange = (e) => {
+const onSlideChange = (e: SwiperType) => {
   emits('change', e);
-  activeIndex.value = (e as SwiperType).activeIndex;
+  activeIndex.value = e.activeIndex;
 };
 </script>
 
