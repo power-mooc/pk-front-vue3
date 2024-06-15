@@ -8,11 +8,12 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Card: typeof import('./src/components/Card.vue')['default']
+    Chapters: typeof import('./src/components/Chapters.vue')['default']
+    Comments: typeof import('./src/components/Comments.vue')['default']
     Container: typeof import('./src/components/Container.vue')['default']
     DefaultFooter: typeof import('./src/components/DefaultFooter.vue')['default']
     FreeSwiper: typeof import('./src/components/FreeSwiper.vue')['default']
     IconTooling: typeof import('./src/components/icons/IconTooling.vue')['default']
-    ImagesSwiper: typeof import('./src/components/ImageSwiper.vue')['default']
     ImageSwiper: typeof import('./src/components/ImageSwiper.vue')['default']
     Menu: typeof import('./src/components/Menu.vue')['default']
     MobileNavbar: typeof import('./src/components/MobileNavbar.vue')['default']

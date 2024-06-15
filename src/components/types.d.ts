@@ -11,3 +11,8 @@ export interface PartnerType {
   desc: string;
   image?: string;
 }
+
+export interface GenericType<T> {
+  items: T[];
+  selectedItem?: T;
+}
