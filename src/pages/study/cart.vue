@@ -77,7 +77,7 @@ interface CartItemType {
 }
 
 interface CartType {
-  courses: CartItemType[];
+  courses?: CartItemType[];
 }
 
 withDefaults(defineProps<CartType>(), {
