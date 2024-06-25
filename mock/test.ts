@@ -1,6 +1,7 @@
 import { MockMethod, MockConfig } from 'vite-plugin-mock';
 import fs from 'fs';
 import path from 'path';
+import replace from '@rollup/plugin-replace';
 export default [
   {
     url: '/api/get',
@@ -42,10 +43,12 @@ export default [
     }
   },
   {
-    url: '/api/image',
+    url: '/api/image/:image',
     method: 'get',
     rawResponse: async (_req: any, res: any) => {
-      const imagePath = path.join(__dirname, 'demo.png');
+      const imageName = _req.url.replace('/api/image', '');
+      console.log(imageName);
+      const imagePath = path.join(__dirname, 'assets', imageName);
 
       fs.readFile(imagePath, (err, data) => {
         if (err) {

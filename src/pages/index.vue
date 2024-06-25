@@ -155,8 +155,13 @@ import bg from '@/assets/images/bg.png';
 import type { SwiperItemType } from '@/components/types';
 import { useThemeStore } from '@/stores/useThemeStore';
 import type { Swiper as SwiperType } from 'swiper';
+import { getHomeData } from '@/api/home';
 const themeStore = useThemeStore();
 const { width } = useWindowSize();
+onMounted(async () => {
+  const res = await getHomeData();
+  console.log(res);
+});
 const items: SwiperItemType[] = [
   {
     image: bg,

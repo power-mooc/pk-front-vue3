@@ -16,3 +16,12 @@ export interface GenericType<T> {
   items: T[];
   selectedItem?: T;
 }
+export interface UserRightsType {
+  name: string;
+  rights: UserRightsItemType[];
+  price: number;
+}
+
+export interface VipTypes {
+  items: UserRightsType[];
+}
