@@ -154,13 +154,14 @@
 import bg from '@/assets/images/bg.png';
 import type { SwiperItemType } from '@/components/types';
 import { useThemeStore } from '@/stores/useThemeStore';
+import { useHomeStore } from '@/stores/useHomeStore';
 import type { Swiper as SwiperType } from 'swiper';
-import { getHomeData } from '@/api/home';
 const themeStore = useThemeStore();
+const homeStore = useHomeStore();
 const { width } = useWindowSize();
 onMounted(async () => {
-  const res = await getHomeData();
-  console.log(res);
+  const homeData = await homeStore.fetchData();
+  console.log(homeData);
 });
 const items: SwiperItemType[] = [
   {
