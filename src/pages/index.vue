@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Swiper :items="items" :height="36 * themeStore.rate + 'rem'" />
+    <Swiper :items="homeStore.swipers" :height="36 * themeStore.rate + 'rem'" />
     <Container>
       <!-- 标题 -->
       <div class="py-4">
@@ -24,7 +24,7 @@
           class="group flex transition-all hover:(bg-sky-500 shadow-lg text-white rounded-1 transform-translate-y--1)"
           target="_blank"
           :href="item.url"
-          v-for="(item, index) in projects"
+          v-for="(item, index) in homeStore.projects"
           :key="index"
         >
           <Card
@@ -56,7 +56,7 @@
     </Container>
     <Container>
       <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 w-full lt-sm:px-4">
-        <a :href="item.url" target="_blank" v-for="(item, index) in courses" :key="index" class="flex">
+        <a :href="item.url" target="_blank" v-for="(item, index) in homeStore.courses" :key="index" class="flex">
           <Card
             class="w-full rounded-3 transition-all hover:(transform-translate-y--1 shadow-lg)"
             :image="item.image"
@@ -86,7 +86,7 @@
     </Container>
     <Container class="w-full text-gray-400">
       <Swiper
-        :items="items"
+        :items="homeStore.swiperProjects"
         :height="(width > 640 ? 28 : 40) * themeStore.rate + 'rem'"
         class="w-full sm:w-2/3"
         @change="handleSwiperChange"
@@ -151,7 +151,6 @@
   </div>
 </template>
 <script lang="ts" setup>
-import bg from '@/assets/images/bg.png';
 import type { SwiperItemType } from '@/components/types';
 import { useThemeStore } from '@/stores/useThemeStore';
 import { useHomeStore } from '@/stores/useHomeStore';
@@ -160,124 +159,8 @@ const themeStore = useThemeStore();
 const homeStore = useHomeStore();
 const { width } = useWindowSize();
 onMounted(async () => {
-  const homeData = await homeStore.fetchData();
-  console.log(homeData);
+  await homeStore.fetchData();
 });
-const items: SwiperItemType[] = [
-  {
-    image: bg,
-    title: '传播技术的种子1',
-    subTitle: '让技术没有门槛，让沟通没有障碍'
-  },
-  {
-    image: bg,
-    title: '传播技术的种子2',
-    subTitle: '让技术没有门槛，让沟通没有障碍'
-  },
-  {
-    image: bg,
-    title: '传播技术的种子3',
-    subTitle: '让技术没有门槛，让沟通没有障碍'
-  },
-  {
-    image: bg,
-    title: '传播技术的种子4',
-    subTitle: '让技术没有门槛，让沟通没有障碍'
-  },
-  {
-    image: bg,
-    title: '传播技术的种子5',
-    subTitle: '让技术没有门槛，让沟通没有障碍'
-  }
-];
-const projects = [
-  {
-    title: '前端高级工程师(大前端)',
-    subTitle: '技术成长&职业破局',
-    url: 'https://www.baidu.com',
-    icon: 'i-mdi:web'
-  },
-  {
-    title: '前端高级工程师(大前端)',
-    subTitle: '技术成长&职业破局',
-    url: 'https://www.baidu.com',
-    icon: 'i-mdi:web'
-  },
-  {
-    title: '前端高级工程师(大前端)',
-    subTitle: '技术成长&职业破局',
-    url: 'https://www.baidu.com',
-    icon: 'i-mdi:web'
-  },
-  {
-    title: '前端高级工程师(大前端)',
-    subTitle: '技术成长&职业破局',
-    url: 'https://www.baidu.com',
-    icon: 'i-mdi:web'
-  },
-  {
-    title: '前端高级工程师(大前端)',
-    subTitle: '技术成长&职业破局',
-    url: 'https://www.baidu.com',
-    icon: 'i-mdi:web'
-  },
-  {
-    title: '前端高级工程师(大前端)',
-    subTitle: '技术成长&职业破局',
-    url: 'https://www.baidu.com',
-    icon: 'i-mdi:web'
-  },
-  {
-    title: '前端高级工程师(大前端)',
-    subTitle: '技术成长&职业破局',
-    url: 'https://www.baidu.com',
-    icon: 'i-mdi:web'
-  }
-];
-const courses = [
-  {
-    title: '前端高级工程师(大前端)',
-    subTitle: '技术成长&职业破局',
-    url: 'https://www.baidu.com',
-    image: bg
-  },
-  {
-    title: '前端高级工程师(大前端)',
-    subTitle: '技术成长&职业破局',
-    url: 'https://www.baidu.com',
-    image: bg
-  },
-  {
-    title: '前端高级工程师(大前端)',
-    subTitle: '技术成长&职业破局',
-    url: 'https://www.baidu.com',
-    image: bg
-  },
-  {
-    title: '前端高级工程师(大前端)',
-    subTitle: '技术成长&职业破局',
-    url: 'https://www.baidu.com',
-    image: bg
-  },
-  {
-    title: '前端高级工程师(大前端)',
-    subTitle: '技术成长&职业破局',
-    url: 'https://www.baidu.com',
-    image: bg
-  },
-  {
-    title: '前端高级工程师(大前端)',
-    subTitle: '技术成长&职业破局',
-    url: 'https://www.baidu.com',
-    image: bg
-  },
-  {
-    title: '前端高级工程师(大前端)',
-    subTitle: '技术成长&职业破局',
-    url: 'https://www.baidu.com',
-    image: bg
-  }
-];
 const partners = ref(
   [
     'https://wayearn.static.toimc.com/partner/logo1.png',
@@ -290,11 +173,10 @@ const partners = ref(
     return { image: item };
   })
 );
-
-const selectItem = ref<SwiperItemType>(items[0]);
+const selectItem = ref<SwiperItemType>(homeStore.swipers[0]);
 const handleSwiperChange = (e: SwiperType) => {
   const swiperIndex = e.activeIndex;
-  selectItem.value = items[swiperIndex];
+  selectItem.value = homeStore.swipers[swiperIndex];
 };
 </script>
 <style scoped lang="scss">

@@ -9,7 +9,7 @@ export function getImage(num: number) {
     .sort(() => Math.random() - 0.5)
     .slice(0, num)
     .map((item) => ({
-      image: '/api/assets/' + picData.find((o) => o.url === item.img)?.name,
+      image: '/api/image/bg.png',
       title: item.title,
       subTitle: '',
       url: 'https://www.imooc.com'

@@ -73,7 +73,7 @@
 </template>
 
 <script setup lang="ts">
-const activeIndex = ref(0);
+const activeIndex = ref(1);
 
 provide('activeIndex', activeIndex);
 // import { useParams } from '@/hooks'

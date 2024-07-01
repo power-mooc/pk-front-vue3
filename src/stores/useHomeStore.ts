@@ -1,11 +1,24 @@
 import { getHomeData } from '@/api/home';
+interface ProjectType {
+  title: string;
+  subTitle: string;
+  url: string;
+  icon: string;
+}
+
+interface CourseType {
+  title: string;
+  subTitle: string;
+  url: string;
+  image: string;
+}
 export const useHomeStore = defineStore('home', {
   state() {
     // show: true,
     return {
       swipers: [],
-      projects: [],
-      courses: [],
+      projects: [] as ProjectType[],
+      courses: [] as CourseType[],
       swiperProjects: []
     };
   },

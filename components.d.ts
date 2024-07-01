@@ -16,7 +16,6 @@ declare module 'vue' {
     IconTooling: typeof import('./src/components/icons/IconTooling.vue')['default']
     ImageSwiper: typeof import('./src/components/ImageSwiper.vue')['default']
     MemberBenefits: typeof import('./src/components/MemberBenefits.vue')['default']
-    MembersBenefits: typeof import('./src/components/MembersBenefits.vue')['default']
     Menu: typeof import('./src/components/Menu.vue')['default']
     MobileNavbar: typeof import('./src/components/MobileNavbar.vue')['default']
     Modal: typeof import('./src/components/Modal.vue')['default']

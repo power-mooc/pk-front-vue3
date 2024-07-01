@@ -19,9 +19,8 @@ defineProps({
   }
   // activeIndex: Number
 });
-
 // v-model
-const activeIndex = defineModel<number>({ local: true, default: 2 });
+const activeIndex = defineModel<number>();
 
 // const activeIdx = ref(props.activeIndex)
 

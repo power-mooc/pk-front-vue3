@@ -1,7 +1,6 @@
 import { MockMethod, MockConfig } from 'vite-plugin-mock';
 import fs from 'fs';
 import path from 'path';
-import replace from '@rollup/plugin-replace';
 export default [
   {
     url: '/api/get',
