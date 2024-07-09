@@ -59,7 +59,7 @@ export default defineConfig(({ mode }) => {
             enabledCollections: ['ep']
           })
         ],
-        include: [/\.vue$/, /\.md$/]
+        include: [/\.vue$/, /\.vue\?vue/, /\.md$/]
       }),
       Icons({
         autoInstall: true
@@ -71,15 +71,18 @@ export default defineConfig(({ mode }) => {
       }),
       viteMockServe({
         mockPath: 'mock',
-        enable: mode === 'development'
+        enable: true
       })
     ],
-
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url))
       }
+    },
+    build: {
+      sourcemap: true
     }
+
     // optimizeDeps: {
     //   exclude: ['vue']
     // }

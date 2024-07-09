@@ -14,7 +14,7 @@
     v-bind="$attrs"
   >
     <swiper-slide v-for="item in items" :key="item.image">
-      <slot :item="item">
+      <slot :swiperItem="item">
         <div
           class="w-full h-full bg-no-repeat bg-cover"
           :style="{

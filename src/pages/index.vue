@@ -23,16 +23,16 @@
         <a
           class="group flex transition-all hover:(bg-sky-500 shadow-lg text-white rounded-1 transform-translate-y--1)"
           target="_blank"
-          :href="item.url"
-          v-for="(item, index) in homeStore.projects"
+          v-for="(projectItme, index) in homeStore.projects"
+          :href="projectItme.url"
           :key="index"
         >
           <Card
             class="card w-full"
-            :title="item.title"
-            :sub-title="item.subTitle"
+            :title="projectItme.title"
+            :sub-title="projectItme.subTitle"
             border
-            :icon="item.icon"
+            :icon="projectItme.icon"
             image-type="rounded"
           >
             <template #default>
@@ -56,13 +56,19 @@
     </Container>
     <Container>
       <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 w-full lt-sm:px-4">
-        <a :href="item.url" target="_blank" v-for="(item, index) in homeStore.courses" :key="index" class="flex">
+        <a
+          :href="courseItem.url"
+          target="_blank"
+          v-for="(courseItem, index) in homeStore.courses"
+          :key="index"
+          class="flex"
+        >
           <Card
             class="w-full rounded-3 transition-all hover:(transform-translate-y--1 shadow-lg)"
-            :image="item.image"
+            :image="courseItem.image"
             image-type="rounded"
-            :title="item.title"
-            :sub-title="item.subTitle"
+            :title="courseItem.title"
+            :sub-title="courseItem.subTitle"
             border
           >
             <template #default>
@@ -105,7 +111,8 @@
       <div class="text-2xl font-bold mt-8">合作伙伴</div>
     </Container>
     <Container>
-      <Swiper
+      <FreeSwiper :items="partners"></FreeSwiper>
+      <!-- <Swiper
         height="200px"
         :space-between="50"
         :pagination="{ clickable: true }"
@@ -116,17 +123,17 @@
         loop
         :pagination_hide="true"
       >
-        <template #default="{ item }">
+        <template #default="{ swiperItem }">
           <div class="px-2 lt-sm:h-20 sm:h-36 w-full bg-gray-100">
             <div
               class="w-full h-full bg-no-repeat bg-contain bg-center"
               :style="{
-                backgroundImage: `url(${item.image})`
+                backgroundImage: `url(${swiperItem.image})`
               }"
             ></div>
           </div>
         </template>
-      </Swiper>
+      </Swiper> -->
     </Container>
     <Container class="py-4">
       <div class="w-2/3 h-[300px] sm:h-[400px]">
@@ -158,24 +165,22 @@ import type { Swiper as SwiperType } from 'swiper';
 const themeStore = useThemeStore();
 const homeStore = useHomeStore();
 const { width } = useWindowSize();
-onMounted(async () => {
+
+onBeforeMount(async () => {
   await homeStore.fetchData();
+  selectItem.value = homeStore.swipers[0];
 });
-const partners = ref(
-  [
-    'https://wayearn.static.toimc.com/partner/logo1.png',
-    'https://wayearn.static.toimc.com/partner/logo2.png',
-    'https://wayearn.static.toimc.com/partner/logo8.png',
-    'https://wayearn.static.toimc.com/partner/logo5.png',
-    'https://wayearn.static.toimc.com/partner/logo6.png',
-    'https://wayearn.static.toimc.com/partner/logo7.png'
-  ].map((item) => {
-    return { image: item };
-  })
-);
+const partners = ref([
+  'https://wayearn.static.toimc.com/partner/logo1.png',
+  'https://wayearn.static.toimc.com/partner/logo2.png',
+  'https://wayearn.static.toimc.com/partner/logo8.png',
+  'https://wayearn.static.toimc.com/partner/logo5.png',
+  'https://wayearn.static.toimc.com/partner/logo6.png',
+  'https://wayearn.static.toimc.com/partner/logo7.png'
+]);
 const selectItem = ref<SwiperItemType>(homeStore.swipers[0]);
 const handleSwiperChange = (e: SwiperType) => {
-  const swiperIndex = e.activeIndex;
+  const swiperIndex = e.activeIndex || 0;
   selectItem.value = homeStore.swipers[swiperIndex];
 };
 </script>
