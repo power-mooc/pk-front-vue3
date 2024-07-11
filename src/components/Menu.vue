@@ -2,7 +2,7 @@
   <div :class="['flex', { 'flex-col': align === 'vertial' }]">
     <router-link class="item" to="/">产品</router-link>
     <a class="item" href="https://github.com/power-mooc/pk-front-vue3/issues" target="_blank">社区</a>
-    <router-link class="item" to="/study">学习</router-link>
+    <router-link class="item" to="/study/list">学习</router-link>
     <router-link class="item" to="/about">关于</router-link>
   </div>
 </template>
